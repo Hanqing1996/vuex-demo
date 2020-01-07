@@ -1,10 +1,19 @@
 <template>
-    <span>0</span>
+    <span>{{count}}</span>
 </template>
 
 <script>
+    import store from '../../index'
+
+    console.log(store);
+
     export default {
-        name: "count"
+        name: "myCount",
+        computed: {
+            count () {
+                return store.state.count
+            }
+        }
     }
 </script>
 

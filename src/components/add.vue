@@ -1,16 +1,15 @@
 <template>
-    <button>+</button>
+    <button @click="addOne">+</button>
 </template>
 
 <script>
     import store from '../../index'
 
-    console.log(store);
-
     export default {
         name: "myAdd",
-        data(){
-            return{
+        methods:{
+            addOne(){
+                store.commit('increment')
             }
         }
     }

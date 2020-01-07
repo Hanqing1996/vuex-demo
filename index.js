@@ -14,12 +14,6 @@ Vue.component('v-count',count)
 
 new Vue({
     el: "#app",
-    data:{
-
-    },
-    methods:{
-
-    }
 })
 
 const store = new Vuex.Store({
@@ -32,5 +26,6 @@ const store = new Vuex.Store({
     }
 })
 
+// 导出store对象
 export default store
 
