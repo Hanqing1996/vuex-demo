@@ -4,6 +4,24 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+import add from './src/components/add'
+import reduce from './src/components/reduce'
+import count from './src/components/count'
+
+Vue.component('v-add',add)
+Vue.component('v-reduce',reduce)
+Vue.component('v-count',count)
+
+new Vue({
+    el: "#app",
+    data:{
+
+    },
+    methods:{
+
+    }
+})
+
 const store = new Vuex.Store({
     state: {
         count: 0
@@ -14,20 +32,5 @@ const store = new Vuex.Store({
     }
 })
 
-new Vue({
-    el: '#app',
-    computed: {
-        count () {
-            return store.state.count
-        }
-    },
-    methods: {
-        increment () {
-            store.commit('increment')
-        },
-        decrement () {
-            store.commit('decrement')
-        }
-    }
-})
+export default store
 
