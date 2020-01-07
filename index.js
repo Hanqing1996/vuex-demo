@@ -1,23 +1,33 @@
 import Vue from 'vue'
-import App from './app.vue'
 
 // 引入vuex
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
-
-new Vue(App).$mount('#app')
 
 const store = new Vuex.Store({
     state: {
         count: 0
     },
     mutations: {
-        increment (state) {
-            state.count++
+        increment: state => state.count++,
+        decrement: state => state.count--
+    }
+})
+
+new Vue({
+    el: '#app',
+    computed: {
+        count () {
+            return store.state.count
+        }
+    },
+    methods: {
+        increment () {
+            store.commit('increment')
+        },
+        decrement () {
+            store.commit('decrement')
         }
     }
 })
 
-store.commit('increment') // get
-console.log(store.state.count) // set

@@ -1,4 +1,7 @@
 {
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
+  },
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build <your entry file>"

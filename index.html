@@ -5,7 +5,13 @@
     <title>Parcel - Vue</title>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <p>{{ count }}</p>
+    <p>
+        <button @click="increment">+</button>
+        <button @click="decrement">-</button>
+    </p>
+</div>
 <script src="./index.js"></script>
 </body>
 </html>
