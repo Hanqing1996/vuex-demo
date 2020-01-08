@@ -3,17 +3,13 @@
 </template>
 
 <script>
-    import store from '../../index'
-
-    console.log(store);
+    import { mapState } from 'vuex'
 
     export default {
         name: "myCount",
-        computed: {
-            count () {
-                return store.state.count
-            }
-        }
+        computed: mapState([
+            'count'
+        ])
     }
 </script>
 

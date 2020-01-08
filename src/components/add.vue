@@ -1,15 +1,19 @@
 <template>
-    <button @click="addOne">+</button>
+    <button @click="addOne">+{{count}}</button>
 </template>
 
 <script>
-    import store from '../../index'
+    import {mapState} from "vuex";
 
     export default {
         name: "myAdd",
+        computed: mapState({
+            // 箭头函数可使代码更简练
+            count: state => state.count
+        }),
         methods:{
             addOne(){
-                store.commit('increment')
+                this.$store.commit('increment')
             }
         }
     }

@@ -4,6 +4,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+// 引入store
+import store from "./store";
+
 import add from './src/components/add'
 import reduce from './src/components/reduce'
 import count from './src/components/count'
@@ -14,18 +17,6 @@ Vue.component('v-count',count)
 
 new Vue({
     el: "#app",
+    store:store
 })
-
-const store = new Vuex.Store({
-    state: {
-        count: 0
-    },
-    mutations: {
-        increment: state => state.count++,
-        decrement: state => state.count--
-    }
-})
-
-// 导出store对象
-export default store
 
