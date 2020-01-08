@@ -7,9 +7,7 @@
 
     export default {
         name: "myCount",
-        computed: mapState([
-            'count'
-        ])
+        computed: mapState(['count'])
     }
 </script>
 
