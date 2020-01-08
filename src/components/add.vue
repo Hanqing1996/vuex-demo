@@ -3,17 +3,15 @@
 </template>
 
 <script>
-    import {mapState} from "vuex";
+    import {mapState,mapActions } from "vuex";
 
     export default {
         name: "myAdd",
         computed: mapState(['count']),
-        methods:{
-            addCount(){
-                this.$store.dispatch({
-                    type: 'incrementAsync',
-                })
-            }
+        methods: {
+            ...mapActions({
+                addCount: 'incrementAsync' // 将 `this.addCount()` 映射为 `this.$store.dispatch('incrementAsync')`
+            })
         }
     }
 </script>
