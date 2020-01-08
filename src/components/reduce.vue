@@ -1,20 +1,14 @@
 <template>
-    <button @click="reduceOne">-{{count}}</button>
+    <button @click="decrement">-{{count}}</button>
 </template>
 
 <script>
-    import { mapState } from 'vuex'
+    import {mapMutations, mapState} from 'vuex'
 
     export default {
         name: "myReduce",
-        computed: mapState([
-            'count'
-        ]),
-        methods:{
-            reduceOne(){
-                this.$store.commit('decrement')
-            }
-        }
+        computed: mapState(['count']),
+        methods:mapMutations(['decrement'])
     }
 </script>
 
