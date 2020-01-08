@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 // 引入vuex
-import Vuex from 'vuex'
+import Vuex, {mapState} from 'vuex'
 Vue.use(Vuex)
 
 // 引入store
@@ -18,9 +18,9 @@ Vue.component('v-count',count)
 new Vue({
     el: "#app",
     store:store,
-    data:{
-        userName:store.state.a.name,
-        productItems:store.state.b.items,
+    computed: {
+        ...mapState('a',['name']),
+        ...mapState('b',['items']),
     }
 })
 
