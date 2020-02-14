@@ -1,3 +1,7 @@
+#### store
+store 中储存数据和函数（store 认为函数只是对数据的处理），组件想要读/写数据，必须调用 store 的函数（同步用 mapMutations,异步用 mapActions）
+
+
 #### some questions
 1. [Vuex state is undefined when refresh page?](https://forum.vuejs.org/t/vuex-state-is-undefined-when-refresh-page/42702/2)
 2. [vuex namespaced mapState with multiple modules](https://stackoverflow.com/questions/45594244/vuex-namespaced-mapstate-with-multiple-modules)
